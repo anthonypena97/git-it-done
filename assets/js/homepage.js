@@ -17,17 +17,17 @@ var getUserRepos = function (user) {
     fetch(apiUrl).then(function (response) {
         //    reqquest was successful
         if (response.ok) {
-            response.json().then(functon(data) {
+            response.json().then(function (data) {
                 displayRepos(data, user);
             });
         } else {
             alert('Error: GitHub User Not Found');
         }
-    });
-    .catch(function (error) {
-        // Notice this '.catch()' getting chained onto the end of the '.then()' method
-        alert("Unable to connect to GitHub");
-    });
+    })
+        .catch(function (error) {
+            // Notice this '.catch()' getting chained onto the end of the '.then()' method
+            alert("Unable to connect to GitHub");
+        });
 };
 
 var formSubmitHandler = function (event) {

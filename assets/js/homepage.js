@@ -17,7 +17,7 @@ var getUserRepos = function (user) {
     fetch(apiUrl).then(function (response) {
         //    reqquest was successful
         if (response.ok) {
-            response.json().then(functon(data) {
+            response.json().then(function (data) {
                 displayRepos(data, user);
             });
         } else {
